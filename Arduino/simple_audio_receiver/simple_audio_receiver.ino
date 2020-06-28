@@ -22,6 +22,12 @@
 #define SPDIF_OUT 15
 #define IRQ_PIN   16
 
+/* Other RF24 pins:
+ * MOSI - 11
+ * MISO - 12
+ * SCK -  13 
+ */
+
 RF24 radio(CE_PIN, CSN_PIN);
 
 const byte pipeaddress[][6] = {"1Ad", "2Ad", "3Ad"};

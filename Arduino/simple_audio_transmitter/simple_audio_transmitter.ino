@@ -19,10 +19,19 @@
 
 #define audioBufferSize 128
 
-#define addrEEPROM 0
-#define LED_PIN 3
-#define CE_PIN 5
-#define CSN_PIN 9
+#define addrEEPROM  0
+#define LED_PIN     3
+#define CE_PIN      5
+#define CSN_PIN     9
+#define SPDIF_IN  14
+#define SPDIF_OUT 15
+#define IRQ_PIN     16
+
+/* Other RF24 pins:
+ * MOSI - 11
+ * MISO - 12
+ * SCK -  13 
+ */
 
 RF24 radio(CE_PIN, CSN_PIN);
 
@@ -97,8 +106,6 @@ void setup(){
 }
 
 void loop(){
-//  delayChanger();
-
   // Check the peak amplitude every 250ms and set the amplitude flag boolean.
   if(clk >= 250){
     if(peak1.available()){

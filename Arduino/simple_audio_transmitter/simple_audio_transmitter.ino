@@ -23,8 +23,8 @@
 #define LED_PIN     3
 #define CE_PIN      5
 #define CSN_PIN     9
-#define SPDIF_IN  14
-#define SPDIF_OUT 15
+#define SPDIF_IN    14
+#define SPDIF_OUT   15
 #define IRQ_PIN     16
 
 /* Other RF24 pins:

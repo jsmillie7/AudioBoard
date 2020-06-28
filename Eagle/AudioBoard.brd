@@ -150,7 +150,7 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 </library>
 <library name="Teensy3.2">
 <packages>
-<package name="TEENSY4.0">
+<package name="TEENSY4.0_FULL_IO">
 <pad name="12" x="1.27" y="1.27" drill="1"/>
 <pad name="11" x="1.27" y="3.81" drill="1"/>
 <pad name="10" x="1.27" y="6.35" drill="1"/>
@@ -189,6 +189,16 @@ Comments, suggestions and bug reports please send to: &lt;b&gt;&lt;a href="mailt
 <wire x1="0" y1="35.56" x2="17.78" y2="35.56" width="0.127" layer="21" style="shortdash"/>
 <wire x1="17.78" y1="35.56" x2="17.78" y2="0" width="0.127" layer="21" style="shortdash"/>
 <wire x1="17.78" y1="0" x2="0" y2="0" width="0.127" layer="21" style="shortdash"/>
+<pad name="32" x="3.81" y="6.35" drill="1"/>
+<pad name="33" x="3.81" y="8.89" drill="1"/>
+<pad name="30" x="6.35" y="6.35" drill="1"/>
+<pad name="31" x="6.35" y="8.89" drill="1"/>
+<pad name="28" x="8.89" y="6.35" drill="1"/>
+<pad name="29" x="8.89" y="8.89" drill="1"/>
+<pad name="26" x="11.43" y="6.35" drill="1"/>
+<pad name="27" x="11.43" y="8.89" drill="1"/>
+<pad name="24" x="13.97" y="6.35" drill="1"/>
+<pad name="25" x="13.97" y="8.89" drill="1"/>
 </package>
 </packages>
 </library>
@@ -1584,172 +1594,199 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="M1" library="NRF24L01" package="WIRELESS-NRF24L01" value="WIRELESS-NRF24L01" x="35.56" y="29.21" smashed="yes">
-<attribute name="NAME" x="35.56" y="38.1" size="1.27" layer="25" align="bottom-center"/>
-<attribute name="VALUE" x="35.56" y="21.59" size="1.27" layer="27" align="top-center"/>
+<element name="M1" library="NRF24L01" package="WIRELESS-NRF24L01" value="WIRELESS-NRF24L01" x="35.56" y="36.83" smashed="yes" rot="R90">
+<attribute name="NAME" x="26.67" y="36.83" size="1.27" layer="25" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="43.18" y="36.83" size="1.27" layer="27" rot="R90" align="top-center"/>
 </element>
-<element name="U$1" library="Teensy3.2" package="TEENSY4.0" value="TEENSY4.0" x="19.05" y="36.83" smashed="yes" rot="R180"/>
 <element name="U$2" library="SPDIF" package="SPDIF-IN" value="S/PDIF-IN" x="31.75" y="12.7" smashed="yes" rot="R180">
 <attribute name="NAME" x="29.718" y="0.635" size="1.27" layer="25" rot="R180"/>
 </element>
 <element name="U$3" library="SPDIF" package="SPDIF-OUT" value="S/PDIF-OUT" x="60.96" y="12.7" smashed="yes" rot="R180">
 <attribute name="NAME" x="59.055" y="0.762" size="1.27" layer="25" rot="R180"/>
 </element>
-<element name="U$4" library="smd_button" package="SMD" value="SMD_BUTTON" x="10.16" y="40.64" smashed="yes" rot="R180">
-<attribute name="NAME" x="8.89" y="39.37" size="0.6096" layer="21" rot="R180" align="center"/>
+<element name="U$4" library="smd_button" package="SMD" value="SMD_BUTTON" x="10.16" y="41.91" smashed="yes" rot="R180">
+<attribute name="NAME" x="8.89" y="40.64" size="0.6096" layer="21" rot="R180" align="center"/>
 </element>
-<element name="U1" library="MUX_2-1_NC7SZ157P6X" package="SOIC_Z157P6X_ONS" value="NC7SZ157P6X" x="34.29" y="15.24" smashed="yes" rot="R90">
-<attribute name="DATASHEET" value="https://datasheet.octopart.com/NC7SZ157P6X-ON-Semiconductor-datasheet-137360983.pdf" x="34.29" y="15.24" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="NC7SZ157P6X" x="34.29" y="15.24" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="34.925" y="11.9634" size="1.27" layer="25" ratio="6" rot="SR90"/>
-<attribute name="SOURCELIBRARY" value="ON_Semiconductor_2020-03-06" x="34.29" y="15.24" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VENDOR" value="ON Semiconductor" x="34.29" y="15.24" size="1.778" layer="27" rot="R90" display="off"/>
+<element name="U1" library="MUX_2-1_NC7SZ157P6X" package="SOIC_Z157P6X_ONS" value="NC7SZ157P6X" x="31.75" y="16.51" smashed="yes" rot="R90">
+<attribute name="DATASHEET" value="https://datasheet.octopart.com/NC7SZ157P6X-ON-Semiconductor-datasheet-137360983.pdf" x="31.75" y="16.51" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="NC7SZ157P6X" x="31.75" y="16.51" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="29.845" y="15.7734" size="1.27" layer="25" ratio="6" rot="SR90"/>
+<attribute name="SOURCELIBRARY" value="ON_Semiconductor_2020-03-06" x="31.75" y="16.51" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VENDOR" value="ON Semiconductor" x="31.75" y="16.51" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
-<element name="R1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0805" package3d_urn="urn:adsk.eagle:package:26059/1" value="250" x="21.082" y="14.859" smashed="yes" rot="R90">
-<attribute name="NAME" x="19.812" y="14.224" size="1.27" layer="25" rot="R90"/>
-<attribute name="VALUE" x="23.622" y="14.224" size="1.27" layer="27" rot="R90"/>
+<element name="R1" library="resistor" library_urn="urn:adsk.eagle:library:348" package="R0805" package3d_urn="urn:adsk.eagle:package:26059/1" value="250" x="6.096" y="33.147" smashed="yes" rot="R180">
+<attribute name="NAME" x="6.731" y="31.877" size="1.27" layer="25" rot="R180"/>
 </element>
+<element name="U$5" library="Teensy3.2" package="TEENSY4.0_FULL_IO" value="TEENSY4.0_FULL_IO" x="19.05" y="36.83" smashed="yes" rot="R180"/>
 </elements>
 <signals>
 <signal name="GND">
 <contactref element="U$4" pad="2"/>
-<contactref element="U$1" pad="GND2"/>
-<contactref element="U$1" pad="AGND"/>
-<contactref element="U$1" pad="GND"/>
 <contactref element="M1" pad="1"/>
 <contactref element="U1" pad="2"/>
 <contactref element="U$2" pad="GND"/>
 <contactref element="U$3" pad="GND"/>
-<wire x1="34.29" y1="14.12875" x2="58.444" y2="9.709" width="0" layer="19" extent="1-1"/>
-<wire x1="26.694" y1="9.709" x2="34.29" y2="14.12875" width="0" layer="19" extent="1-1"/>
+<contactref element="U$5" pad="AGND"/>
+<contactref element="U$5" pad="GND"/>
+<contactref element="U$5" pad="GND2"/>
+<wire x1="31.75" y1="15.39875" x2="58.444" y2="9.709" width="0" layer="19" extent="1-1"/>
+<wire x1="26.694" y1="9.709" x2="31.75" y2="15.39875" width="0" layer="19" extent="1-1"/>
 <wire x1="17.78" y1="2.54" x2="26.694" y2="9.709" width="0" layer="19" extent="1-1"/>
 <wire x1="2.54" y1="5.08" x2="17.78" y2="2.54" width="0" layer="19" extent="1-1"/>
-<wire x1="22.86" y1="35.56" x2="34.29" y2="14.12875" width="0" layer="19" extent="1-1"/>
-<wire x1="13.66" y1="40.64" x2="22.86" y2="35.56" width="0" layer="19" extent="1-1"/>
-<wire x1="10.16" y1="35.56" x2="13.66" y2="40.64" width="0" layer="19" extent="1-1"/>
+<wire x1="29.21" y1="24.13" x2="31.75" y2="15.39875" width="0" layer="19" extent="1-1"/>
+<wire x1="13.66" y1="41.91" x2="29.21" y2="24.13" width="0" layer="19" extent="1-1"/>
+<wire x1="10.16" y1="35.56" x2="13.66" y2="41.91" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="ON/OFF">
 <contactref element="U$4" pad="1"/>
-<contactref element="U$1" pad="ON/OFF"/>
-<wire x1="5.08" y1="35.56" x2="6.66" y2="40.64" width="0" layer="19" extent="1-1"/>
+<contactref element="U$5" pad="ON/OFF"/>
+<wire x1="5.08" y1="35.56" x2="6.66" y2="41.91" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="3V3">
-<contactref element="U$1" pad="3.3V"/>
 <contactref element="M1" pad="2"/>
 <contactref element="U1" pad="5"/>
 <contactref element="U$2" pad="VCC"/>
 <contactref element="U$3" pad="VCC"/>
-<wire x1="34.29" y1="16.35125" x2="55.904" y2="9.709" width="0" layer="19" extent="1-1"/>
-<wire x1="24.154" y1="9.709" x2="34.29" y2="16.35125" width="0" layer="19" extent="1-1"/>
-<wire x1="25.4" y1="35.56" x2="34.29" y2="16.35125" width="0" layer="19" extent="1-1"/>
+<contactref element="U$5" pad="3.3V"/>
+<wire x1="31.75" y1="17.62125" x2="55.904" y2="9.709" width="0" layer="19" extent="1-1"/>
+<wire x1="24.154" y1="9.709" x2="31.75" y2="17.62125" width="0" layer="19" extent="1-1"/>
+<wire x1="29.21" y1="26.67" x2="31.75" y2="17.62125" width="0" layer="19" extent="1-1"/>
 <wire x1="2.54" y1="7.62" x2="24.154" y2="9.709" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="5V">
-<contactref element="U$1" pad="VIN"/>
-</signal>
-<signal name="N$1">
-<contactref element="U$1" pad="RX"/>
-</signal>
-<signal name="N$2">
-<contactref element="U$1" pad="TX"/>
-</signal>
-<signal name="N$3">
-<contactref element="U$1" pad="2"/>
+<contactref element="U$5" pad="VIN"/>
 </signal>
 <signal name="LED">
-<contactref element="U$1" pad="3"/>
-</signal>
-<signal name="N$5">
-<contactref element="U$1" pad="4"/>
-</signal>
-<signal name="N$7">
-<contactref element="U$1" pad="6"/>
+<contactref element="U$5" pad="3"/>
 </signal>
 <signal name="I2S_DOUT">
-<contactref element="U$1" pad="7"/>
+<contactref element="U$5" pad="7"/>
 </signal>
 <signal name="I2S_DIN">
-<contactref element="U$1" pad="8"/>
-</signal>
-<signal name="N$11">
-<contactref element="U$1" pad="10"/>
+<contactref element="U$5" pad="8"/>
 </signal>
 <signal name="S/PDIF-IN">
-<contactref element="U$1" pad="14"/>
 <contactref element="U1" pad="4"/>
-<wire x1="2.54" y1="33.02" x2="34.94" y2="16.35125" width="0" layer="19" extent="1-1"/>
+<contactref element="U$5" pad="14"/>
+<wire x1="2.54" y1="33.02" x2="32.4" y2="17.62125" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="S/PDIF-OUT">
-<contactref element="U$1" pad="15"/>
 <contactref element="U$3" pad="SIGNAL"/>
+<contactref element="U$5" pad="15"/>
 <wire x1="2.54" y1="30.48" x2="53.364" y2="9.709" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="N$18">
-<contactref element="U$1" pad="17"/>
-</signal>
 <signal name="SGTL_SDA">
-<contactref element="U$1" pad="18"/>
+<contactref element="U$5" pad="18"/>
 </signal>
 <signal name="SGTL_SCL">
-<contactref element="U$1" pad="19"/>
+<contactref element="U$5" pad="19"/>
 </signal>
 <signal name="LRCLK">
-<contactref element="U$1" pad="20"/>
+<contactref element="U$5" pad="20"/>
 </signal>
 <signal name="SCLK">
-<contactref element="U$1" pad="21"/>
-</signal>
-<signal name="N$23">
-<contactref element="U$1" pad="22"/>
+<contactref element="U$5" pad="21"/>
 </signal>
 <signal name="MCLK">
-<contactref element="U$1" pad="23"/>
+<contactref element="U$5" pad="23"/>
 </signal>
 <signal name="CE">
 <contactref element="M1" pad="3"/>
-<contactref element="U$1" pad="5"/>
-<wire x1="17.78" y1="17.78" x2="22.86" y2="33.02" width="0" layer="19" extent="1-1"/>
+<contactref element="U$5" pad="5"/>
+<wire x1="17.78" y1="17.78" x2="31.75" y2="24.13" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="CSN">
 <contactref element="M1" pad="4"/>
-<contactref element="U$1" pad="9"/>
-<wire x1="17.78" y1="27.94" x2="25.4" y2="33.02" width="0" layer="19" extent="1-1"/>
+<contactref element="U$5" pad="9"/>
+<wire x1="17.78" y1="27.94" x2="31.75" y2="26.67" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCK">
 <contactref element="M1" pad="5"/>
-<contactref element="U$1" pad="13"/>
-<wire x1="2.54" y1="35.56" x2="22.86" y2="30.48" width="0" layer="19" extent="1-1"/>
+<contactref element="U$5" pad="13"/>
+<wire x1="2.54" y1="35.56" x2="34.29" y2="24.13" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MOSI">
 <contactref element="M1" pad="6"/>
-<contactref element="U$1" pad="11"/>
-<wire x1="17.78" y1="33.02" x2="25.4" y2="30.48" width="0" layer="19" extent="1-1"/>
+<contactref element="U$5" pad="11"/>
+<wire x1="17.78" y1="33.02" x2="34.29" y2="26.67" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="MISO">
 <contactref element="M1" pad="7"/>
-<contactref element="U$1" pad="12"/>
-<wire x1="22.86" y1="27.94" x2="17.78" y2="35.56" width="0" layer="19" extent="1-1"/>
+<contactref element="U$5" pad="12"/>
+<wire x1="36.83" y1="24.13" x2="17.78" y2="35.56" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="IRQ">
 <contactref element="M1" pad="8"/>
-<contactref element="U$1" pad="16"/>
-<wire x1="2.54" y1="27.94" x2="25.4" y2="27.94" width="0" layer="19" extent="1-1"/>
+<contactref element="U$5" pad="16"/>
+<wire x1="2.54" y1="27.94" x2="36.83" y2="26.67" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="S/PDIF_1_IN">
 <contactref element="U1" pad="1"/>
 <contactref element="U$2" pad="SIGNAL"/>
 <contactref element="R1" pad="1"/>
-<wire x1="29.234" y1="9.709" x2="33.64" y2="14.12875" width="0" layer="19" extent="1-1"/>
-<wire x1="21.082" y1="13.909" x2="29.234" y2="9.709" width="0" layer="19" extent="1-1"/>
+<wire x1="29.234" y1="9.709" x2="31.1" y2="15.39875" width="0" layer="19" extent="1-1"/>
+<wire x1="7.046" y1="33.147" x2="29.234" y2="9.709" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="S/PDIF_0_IN">
 <contactref element="U1" pad="3"/>
 </signal>
 <signal name="MUX_SWITCH">
 <contactref element="U1" pad="6"/>
+<contactref element="U$5" pad="25"/>
+<wire x1="5.08" y1="27.94" x2="31.1" y2="17.62125" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SIGNAL_DETECT">
 <contactref element="R1" pad="2"/>
+<contactref element="U$5" pad="24"/>
+<wire x1="5.08" y1="30.48" x2="5.146" y2="33.147" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$10">
+<contactref element="U$5" pad="22"/>
+</signal>
+<signal name="N$16">
+<contactref element="U$5" pad="17"/>
+</signal>
+<signal name="N$28">
+<contactref element="U$5" pad="10"/>
+</signal>
+<signal name="N$32">
+<contactref element="U$5" pad="6"/>
+</signal>
+<signal name="N$34">
+<contactref element="U$5" pad="4"/>
+</signal>
+<signal name="N$36">
+<contactref element="U$5" pad="2"/>
+</signal>
+<signal name="N$37">
+<contactref element="U$5" pad="TX"/>
+</signal>
+<signal name="N$38">
+<contactref element="U$5" pad="RX"/>
+</signal>
+<signal name="N$42">
+<contactref element="U$5" pad="26"/>
+</signal>
+<signal name="N$43">
+<contactref element="U$5" pad="27"/>
+</signal>
+<signal name="N$44">
+<contactref element="U$5" pad="28"/>
+</signal>
+<signal name="N$45">
+<contactref element="U$5" pad="29"/>
+</signal>
+<signal name="N$46">
+<contactref element="U$5" pad="30"/>
+</signal>
+<signal name="N$47">
+<contactref element="U$5" pad="31"/>
+</signal>
+<signal name="N$48">
+<contactref element="U$5" pad="32"/>
+</signal>
+<signal name="N$49">
+<contactref element="U$5" pad="33"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

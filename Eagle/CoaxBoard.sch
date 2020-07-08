@@ -9209,62 +9209,6 @@ Source: AVX .. aphvc.pdf</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="1x2HEADER">
-<packages>
-<package name="1X3HEADER">
-<pad name="P$1" x="1.27" y="1.27" drill="1" diameter="1.6764"/>
-<pad name="P$2" x="3.81" y="1.27" drill="1" diameter="1.6764"/>
-<pad name="P$3" x="6.35" y="1.27" drill="1" diameter="1.6764"/>
-<wire x1="0" y1="0.635" x2="0" y2="1.905" width="0.127" layer="21"/>
-<wire x1="0" y1="1.905" x2="0.635" y2="2.54" width="0.127" layer="21"/>
-<wire x1="0.635" y1="2.54" x2="1.905" y2="2.54" width="0.127" layer="21"/>
-<wire x1="1.905" y1="2.54" x2="2.54" y2="1.905" width="0.127" layer="21"/>
-<wire x1="2.54" y1="1.905" x2="3.175" y2="2.54" width="0.127" layer="21"/>
-<wire x1="3.175" y1="2.54" x2="4.445" y2="2.54" width="0.127" layer="21"/>
-<wire x1="4.445" y1="2.54" x2="5.08" y2="1.905" width="0.127" layer="21"/>
-<wire x1="5.08" y1="1.905" x2="5.715" y2="2.54" width="0.127" layer="21"/>
-<wire x1="5.715" y1="2.54" x2="6.985" y2="2.54" width="0.127" layer="21"/>
-<wire x1="6.985" y1="2.54" x2="7.62" y2="1.905" width="0.127" layer="21"/>
-<wire x1="7.62" y1="1.905" x2="7.62" y2="0.635" width="0.127" layer="21"/>
-<wire x1="7.62" y1="0.635" x2="6.985" y2="0" width="0.127" layer="21"/>
-<wire x1="6.985" y1="0" x2="5.715" y2="0" width="0.127" layer="21"/>
-<wire x1="5.715" y1="0" x2="5.08" y2="0.635" width="0.127" layer="21"/>
-<wire x1="5.08" y1="0.635" x2="4.445" y2="0" width="0.127" layer="21"/>
-<wire x1="4.445" y1="0" x2="3.175" y2="0" width="0.127" layer="21"/>
-<wire x1="3.175" y1="0" x2="2.54" y2="0.635" width="0.127" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="1.905" y2="0" width="0.127" layer="21"/>
-<wire x1="1.905" y1="0" x2="0.635" y2="0" width="0.127" layer="21"/>
-<wire x1="0.635" y1="0" x2="0" y2="0.635" width="0.127" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="1X3">
-<pin name="2" x="-5.08" y="0" visible="pin" length="short"/>
-<pin name="1" x="-5.08" y="5.08" visible="pin" length="short"/>
-<wire x1="-2.54" y1="7.62" x2="-2.54" y2="-7.62" width="0.254" layer="94"/>
-<pin name="3" x="-5.08" y="-5.08" visible="pin" length="short"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="1X3HEADER">
-<gates>
-<gate name="G$1" symbol="1X3" x="-7.62" y="0"/>
-</gates>
-<devices>
-<device name="" package="1X3HEADER">
-<connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-<connect gate="G$1" pin="2" pad="P$2"/>
-<connect gate="G$1" pin="3" pad="P$3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 </libraries>
 <attributes>
 </attributes>
@@ -9284,10 +9228,7 @@ Source: AVX .. aphvc.pdf</description>
 <part name="R3" library="resistor" library_urn="urn:adsk.eagle:library:348" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:26059/1" value="8k2"/>
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10n"/>
 <part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
-<part name="SUPPLY4" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="VCC" device=""/>
 <part name="SUPPLY5" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
-<part name="U$2" library="1x2HEADER" deviceset="1X3HEADER" device=""/>
-<part name="SUPPLY6" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -9324,15 +9265,8 @@ Source: AVX .. aphvc.pdf</description>
 <instance part="SUPPLY3" gate="G$1" x="127" y="22.86" smashed="yes">
 <attribute name="VALUE" x="125.095" y="26.035" size="1.778" layer="96"/>
 </instance>
-<instance part="SUPPLY4" gate="G$1" x="142.24" y="22.86" smashed="yes">
-<attribute name="VALUE" x="140.335" y="26.035" size="1.778" layer="96"/>
-</instance>
 <instance part="SUPPLY5" gate="GND" x="38.1" y="10.16" smashed="yes">
 <attribute name="VALUE" x="36.195" y="6.985" size="1.778" layer="96"/>
-</instance>
-<instance part="U$2" gate="G$1" x="147.32" y="10.16" smashed="yes"/>
-<instance part="SUPPLY6" gate="GND" x="142.24" y="0" smashed="yes">
-<attribute name="VALUE" x="140.335" y="-3.175" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -9357,11 +9291,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="U1" gate="A" pin="GND"/>
 <pinref part="SUPPLY1" gate="GND" pin="GND"/>
 <wire x1="76.2" y1="0" x2="76.2" y2="2.54" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="3"/>
-<pinref part="SUPPLY6" gate="GND" pin="GND"/>
-<wire x1="142.24" y1="2.54" x2="142.24" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -9398,11 +9327,6 @@ Source: AVX .. aphvc.pdf</description>
 <pinref part="SUPPLY3" gate="G$1" pin="VCC"/>
 <wire x1="127" y1="20.32" x2="127" y2="17.78" width="0.1524" layer="91"/>
 </segment>
-<segment>
-<pinref part="U$2" gate="G$1" pin="1"/>
-<pinref part="SUPPLY4" gate="G$1" pin="VCC"/>
-<wire x1="142.24" y1="20.32" x2="142.24" y2="15.24" width="0.1524" layer="91"/>
-</segment>
 </net>
 <net name="N$6" class="0">
 <segment>
@@ -9416,14 +9340,19 @@ Source: AVX .. aphvc.pdf</description>
 </net>
 <net name="SIGNAL" class="0">
 <segment>
-<pinref part="U$2" gate="G$1" pin="2"/>
-<wire x1="142.24" y1="10.16" x2="139.7" y2="10.16" width="0.1524" layer="91"/>
-<label x="139.7" y="10.16" size="0.762" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <pinref part="U1" gate="A" pin="2Y"/>
 <wire x1="76.2" y1="10.16" x2="78.74" y2="10.16" width="0.1524" layer="91"/>
 <label x="76.2" y="10.16" size="0.762" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<wire x1="142.24" y1="20.32" x2="142.24" y2="15.24" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$5" class="0">
+<segment>
+<wire x1="142.24" y1="2.54" x2="142.24" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

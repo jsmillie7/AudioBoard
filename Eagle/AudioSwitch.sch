@@ -5165,6 +5165,10 @@ Source: http://www.murata.com .. GRM43DR72E224KW01.pdf</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,55.88,35.56,U1,5,VCC,,,"/>
+<approved hash="113,1,12.7,44.3272,R1,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>

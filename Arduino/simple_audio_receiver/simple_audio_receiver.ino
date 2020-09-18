@@ -21,6 +21,7 @@
 #define SPDIF_IN  14
 #define SPDIF_OUT 15
 #define IRQ_PIN   16
+#define CHANNEL   122
 
 /* Other RF24 pins:
  * MOSI - 11
@@ -35,15 +36,12 @@ const byte pipeaddress[][6] = {"1Ad", "2Ad", "3Ad"};
 // GUItool: begin automatically generated code
 AudioPlayQueue          queue1;
 AudioOutputI2S          i2s1;
-//AudioOutputSPDIF3       spdif1;
 AudioConnection         patchCord1(queue1, 0, i2s1, 0);
 AudioConnection         patchCord2(queue1, 0, i2s1, 1);
-//AudioConnection         patchCord3(queue1, 0, spdif1, 0);
-//AudioConnection         patchCord4(queue1, 0, spdif1, 1);
 AudioControlSGTL5000    sgtl5000; 
 // GUItool: end automatically generated code
 
-uint8_t bufr[audioBufferSize * 2];
+DMAMEM uint8_t bufr[audioBufferSize * 2];
 
 bool triggerIRQ = 0; // Set to HIGH when audio data is available
 
@@ -69,10 +67,11 @@ void setup(){
   radio.setAutoAck(false); //no Ack
   radio.disableCRC(); //no CRC
 //  radio.setCRCLength(RF24_CRC_8);
-  radio.setPALevel(RF24_PA_MAX);
+//  radio.setPALevel(RF24_PA_MAX);
+  radio.setPALevel(RF24_PA_LOW);
   radio.setDataRate(RF24_2MBPS);
   radio.setRetries(0,1);
-  radio.setChannel(122);
+  radio.setChannel(CHANNEL);
   delay(100);
   
   radio.openReadingPipe(1, pipeaddress[0]);
@@ -94,7 +93,7 @@ void setup(){
 }
 
 
-void loop()
+FASTRUN void loop()
 {    
   /*
   * Wait for a flag to trigger from the IRQ pin, and read all data from the memory

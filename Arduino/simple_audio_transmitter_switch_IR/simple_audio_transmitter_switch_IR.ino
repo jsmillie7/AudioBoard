@@ -17,6 +17,23 @@
 #include <nRF24L01.h>
 #include <RF24.h>
 #include <EEPROM.h>
+#include <IRremote.h>
+
+// Remote Codes
+#define VOLUME_UP 0x97E77B1B
+#define VOLUME_DOWN 0xEC7AD6DA
+#define VOLUME_MUTE 0x54051BF
+
+// IR Setup
+#define IR_PIN 10
+IRrecv irrecv(IR_PIN);
+decode_results results;
+elapsedMillis IRtime;
+float vol = 0.24;
+bool mute = false;
+float setVol = 0.0;
+float curVol = 0.0;
+float deltaVol = 0.04;
 
 // Defined Constants
 #define EEPROM_ADDR     0
@@ -69,6 +86,9 @@ float mean;
 bool muxState = false;
 
 void setup(){
+  // Start IR Receiver
+  irrecv.enableIRIn();
+  
   // Initialize IO Pins
   pinMode(LED_PIN, OUTPUT);
   pinMode(SIG_DET,INPUT);
@@ -80,8 +100,8 @@ void setup(){
 
   // Initialize Audio Settings
   AudioMemory(15);
-  mixer1.gain(0,0.5);
-  mixer1.gain(1,0.5);
+  mixer1.gain(0,setVol);
+  mixer1.gain(1,setVol);
   delay1.delay(0, del);
   delay2.delay(0, del);
 
@@ -117,6 +137,15 @@ void setup(){
 FASTRUN void loop(){
   // Checks serial buffer and updates delay value 
   delayChanger();
+
+  // Search for remote conrol codes
+  getVol();
+  if (curVol != setVol){
+    // Set Volume on mixer
+    mixer1.gain(0,setVol);
+    mixer1.gain(1,setVol);
+    curVol = setVol;
+  }
 
   // Signal detection for auto switch
   autoSwitchMUX();
@@ -240,4 +269,42 @@ void save(){
   EEPROM.update(EEPROM_ADDR, del);
   Serial.print(del);
   Serial.println(" ms delay saved!");
+}
+
+
+FASTRUN void getVol() {
+  if (irrecv.decode(&results)) {
+    int val = results.value;
+    irrecv.resume();
+    if (IRtime > 25){
+      switch (val) {
+      // Volume Up
+      case VOLUME_UP:
+        mute = false;
+        vol+=deltaVol;
+        if (vol > 1.00){
+          vol = 1.00;
+        }
+        IRtime = 0;
+        break;
+      // Volume Down
+      case VOLUME_DOWN:
+        mute = false;
+        vol-=deltaVol;
+        if (vol < 0.00){
+          vol = 0.00;
+        }
+        IRtime = 0;
+        break;
+      // Mute
+      case VOLUME_MUTE:
+        if (IRtime > 250){
+          mute = not mute;
+          IRtime = 0;
+        }
+      break;
+      }
+      setVol = vol*(not mute);
+    }
+  }
 }

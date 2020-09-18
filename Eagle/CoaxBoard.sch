@@ -9345,16 +9345,6 @@ Source: AVX .. aphvc.pdf</description>
 <label x="76.2" y="10.16" size="0.762" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="N$4" class="0">
-<segment>
-<wire x1="142.24" y1="20.32" x2="142.24" y2="15.24" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$5" class="0">
-<segment>
-<wire x1="142.24" y1="2.54" x2="142.24" y2="5.08" width="0.1524" layer="91"/>
-</segment>
-</net>
 </nets>
 </sheet>
 </sheets>
